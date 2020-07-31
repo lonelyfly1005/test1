@@ -1,0 +1,101 @@
+admindeMacBook-Pro-4% mkdir learnme
+admindeMacBook-Pro-4% mv readme.txt ./learnme 
+admindeMacBook-Pro-4% cd learnme 
+admindeMacBook-Pro-4% git init
+Initialized empty Git repository in /Users/admin/git/learnme/.git/
+admindeMacBook-Pro-4% ls
+readme.txt
+admindeMacBook-Pro-4% ll -a
+zsh: command not found: ll
+admindeMacBook-Pro-4% ls -h
+readme.txt
+admindeMacBook-Pro-4% la -a
+zsh: command not found: la
+admindeMacBook-Pro-4% ls -ah
+.		..		.git		readme.txt
+admindeMacBook-Pro-4% vim readme.txt 
+admindeMacBook-Pro-4% git add readme.txt 
+admindeMacBook-Pro-4% git commit -w 'test'
+error: unknown switch `w'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+admindeMacBook-Pro-4% git commit -m 'test'
+[master (root-commit) 837b8ca] test
+ 1 file changed, 6 insertions(+)
+ create mode 100644 readme.txt
+admindeMacBook-Pro-4% git remote add origin git@github.com:lonelyfly1005/learngit.git
+admindeMacBook-Pro-4%  git push -u origin master
+The authenticity of host 'github.com (52.74.223.119)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,52.74.223.119' (RSA) to the list of known hosts.
+To github.com:lonelyfly1005/learngit.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:lonelyfly1005/learngit.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+admindeMacBook-Pro-4% git remote add origin git@github.com:lonelyfly1005/test1.git   
+fatal: remote origin already exists.
+admindeMacBook-Pro-4% git remote -v
+origin	git@github.com:lonelyfly1005/learngit.git (fetch)
+origin	git@github.com:lonelyfly1005/learngit.git (push)
+admindeMacBook-Pro-4% git remote rm origin
+admindeMacBook-Pro-4% git remote -v       
+admindeMacBook-Pro-4% git remote add origin git@github.com:lonelyfly1005/test1.git
+admindeMacBook-Pro-4%  git push -u origin master                                  
+Warning: Permanently added the RSA host key for IP address '13.229.188.59' to the list of known hosts.
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 301 bytes | 301.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:lonelyfly1005/test1.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
