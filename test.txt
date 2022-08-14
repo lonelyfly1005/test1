@@ -12,6 +12,7 @@ readme.txt
 admindeMacBook-Pro-4% la -a
 zsh: command not found: la
 admindeMacBook-Pro-4% ls -ah
+123
 .		..		.git		readme.txt
 admindeMacBook-Pro-4% vim readme.txt 
 admindeMacBook-Pro-4% git add readme.txt 
